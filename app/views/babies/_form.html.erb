@@ -1,1 +1,24 @@
-<!-- Your form goes here! -->
+<!-- Your form goes h! -->
+
+<%= form_for @baby do |f| %>
+
+<%= f.label :first_name %>
+<%= f.text_field :first_name %>
+
+<%= f.label :last_name %>
+<%= f.text_field :last_name %>
+
+<%= f.label :weight_name %>
+<%= f.text_field :weight %>
+
+<%= f.label :birth_date %>
+<%= f.date_field :birth_date %>
+
+
+<%if params[:action] == "new" %>
+<%= f.submit "Create Baby" %>
+<%else%>
+<%= f.submit "Update Baby" %>
+<%end%>
+
+<%  end %>

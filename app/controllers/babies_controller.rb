@@ -8,10 +8,15 @@ class BabiesController < ApplicationController
   end
 
   def edit
+
     @baby = Baby.find(params[:id])
   end
 
   def update
+    binding.pry
+    d = params[:baby][:birth_date]
+    d = d.strftime '%Y-%m-%d'
+    params[:baby][:birth_date] = d
     render nothing: true
   end
 end
